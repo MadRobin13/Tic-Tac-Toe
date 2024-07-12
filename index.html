@@ -52,27 +52,67 @@
 </head>
 <body>
     <div id="one">
-        <p id="player1">Player 1</p>  
+        <p id="player1">Player 1</p>
+        <p id="red"></p>
     </div>
     <div id="two">
-        <p id="player2">Player 2</p>  
+        <p id="player2">Player 2</p> 
+        <p id="blue"></p> 
     </div>
     <div id="everything">
         <div>
-            <button></button>
-            <button></button>
-            <button></button>
+            <button id="1" onclick="changeColor(1)"></button>
+            <button id="2" onclick="changeColor(2)"></button>
+            <button id="3" onclick="changeColor(3)"></button>
         </div>
         <div>
-            <button></button>
-            <button></button>
-            <button></button>
+            <button id="4" onclick="changeColor(4)"></button>
+            <button id="5" onclick="changeColor(5)"></button>
+            <button id="6" onclick="changeColor(6)"></button>
         </div>
         <div>
-            <button></button>
-            <button></button>
-            <button></button>
+            <button id="7" onclick="changeColor(7)"></button>
+            <button id="8" onclick="changeColor(8)"></button>
+            <button id="9" onclick="changeColor(9)"></button>
         </div>
     </div>
 </body>
 </html>
+
+<script>
+
+    let red = "red";
+    let blue = "rgb(0, 247, 255)";
+    let color = "red";
+    let count = 1;
+    let arr = ["", "", "", "", "", "", "", "", ""];
+
+    function changeColor(id){
+
+    if (count % 2 == 0)
+    {
+        color = blue;
+    }
+    else{
+        color = red;
+    }
+
+        document.getElementById(id).style.backgroundColor = color;
+        count++;
+        arr[id] = color;
+    }
+
+    function redWon(){
+        document.getElementById("red").innerHTML = "won!"
+        document.getElementById("blue").innerHTML = "lost :("
+    }
+
+    function blueWon(){
+        document.getElementById("blue").innerHTML = "won!"
+        document.getElementById("red").innerHTML = "lost :("
+    }
+
+    if (arr[1] == "red") {
+        redWon();
+    }
+</script>
