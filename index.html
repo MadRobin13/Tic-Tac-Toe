@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="1946411.png"/>
+    <title>Tic Tac Toe</title>
+    <style>
+        body{
+            background-color: rgb(35, 35, 35);
+        }
+        #everything {
+            display: block;
+            text-align: center;
+            margin-top: 20vh;
+        }
+
+         button {
+            width: 10vw;
+            height: 10vw;
+            border-radius: 2vw;
+            background-color: rgb(209, 209, 209);
+        }
+
+        #one {
+            left: 0;
+            top: 0;
+            width: 20vw;
+            height: 100vh;
+            background-color: red;
+            position: absolute;
+            /* padding-top: 40vh; */
+            text-align: center;
+            font-size: 4vw;
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: white;
+        }
+        #two {
+            right: 0;
+            top: 0;
+            width: 20vw;
+            height: 100vh;
+            background-color: rgb(0, 247, 255);
+            position: absolute;
+            /* padding-top: 40vh; */
+            text-align: center;
+            font-size: 4vw;
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="one">
+        <p id="player1">Player 1</p>  
+    </div>
+    <div id="two">
+        <p id="player2">Player 2</p>  
+    </div>
+    <div id="everything">
+        <div>
+            <button></button>
+            <button></button>
+            <button></button>
+        </div>
+        <div>
+            <button></button>
+            <button></button>
+            <button></button>
+        </div>
+        <div>
+            <button></button>
+            <button></button>
+            <button></button>
+        </div>
+    </div>
+</body>
+</html>
