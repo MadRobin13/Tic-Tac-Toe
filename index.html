@@ -15,11 +15,26 @@
             margin-top: 20vh;
         }
 
-         button {
+        #everything div button{
             width: 10vw;
             height: 10vw;
             border-radius: 2vw;
             background-color: rgb(209, 209, 209);
+        }
+
+        #resetLabel {
+            display: block;            
+            margin-top: 10vh;
+            position: absolute;
+            margin-left: 46.6vw;
+        }
+
+        #reset {
+            /* display: none; */
+            margin-top: 10vh;
+            width: 5.5vw;
+            height: 5.45vw;
+            border-radius: 50%;
         }
 
         #one {
@@ -61,7 +76,7 @@
     </div>
     <div id="everything">
         <div>
-            <button id="0" onclick="changeColor(0); arr[0] = red"></button>
+            <button id="0" onclick="changeColor(0)"></button>
             <button id="1" onclick="changeColor(1)"></button>
             <button id="2" onclick="changeColor(2)"></button>
         </div>
@@ -75,6 +90,8 @@
             <button id="7" onclick="changeColor(7)"></button>
             <button id="8" onclick="changeColor(8)"></button>
         </div>
+        <label for="reset" id="resetLabel"><img src="redo.png" alt="reset board" width="110vw"></label>
+        <button id="reset" onclick="resetBoard()"></button>
     </div>
 </body>
 </html>
@@ -88,6 +105,16 @@
     let count = 1;
     let arr = ["", "", "", "", "", "", "", "", ""];
 
+    function resetBoard() {
+        for (let i = 0; i < 9; i++)
+        {
+            document.getElementById(i).style.backgroundColor = "rgb(209, 209, 209)";
+        }
+        document.getElementById("red").innerHTML = "";
+        document.getElementById("blue").innerHTML = "";
+        count = 1;
+        arr = ["", "", "", "", "", "", "", "", ""];
+    }
 
     function changeColor(id){
  
