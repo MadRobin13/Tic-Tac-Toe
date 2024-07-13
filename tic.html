@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="1946411.png"/>
+    <title>Tic Tac Toe</title>
+    <style>
+        body{
+            background-color: rgb(35, 35, 35);
+        }
+        #everything {
+            display: block;
+            text-align: center;
+            margin-top: 20vh;
+        }
+
+         button {
+            width: 10vw;
+            height: 10vw;
+            border-radius: 2vw;
+            background-color: rgb(209, 209, 209);
+        }
+
+        #one {
+            left: 0;
+            top: 0;
+            width: 20vw;
+            height: 100vh;
+            background-color: red;
+            position: absolute;
+            /* padding-top: 40vh; */
+            text-align: center;
+            font-size: 4vw;
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: white;
+        }
+        #two {
+            right: 0;
+            top: 0;
+            width: 20vw;
+            height: 100vh;
+            background-color: rgb(0, 247, 255);
+            position: absolute;
+            /* padding-top: 40vh; */
+            text-align: center;
+            font-size: 4vw;
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="one">
+        <p id="player1">Player 1</p>
+        <p id="red"></p>
+    </div>
+    <div id="two">
+        <p id="player2">Player 2</p> 
+        <p id="blue"></p> 
+    </div>
+    <div id="everything">
+        <div>
+            <button id="0" onclick="changeColor(0); arr[0] = red"></button>
+            <button id="1" onclick="changeColor(1)"></button>
+            <button id="2" onclick="changeColor(2)"></button>
+        </div>
+        <div>
+            <button id="3" onclick="changeColor(3)"></button>
+            <button id="4" onclick="changeColor(4)"></button>
+            <button id="5" onclick="changeColor(5)"></button>
+        </div>
+        <div>
+            <button id="6" onclick="changeColor(6)"></button>
+            <button id="7" onclick="changeColor(7)"></button>
+            <button id="8" onclick="changeColor(8)"></button>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+
+    let red = "red";
+    let blue = "rgb(0, 247, 255)";
+    let color = red;
+    let type = "";
+    let count = 1;
+
+
+    function changeColor(id){
+        let arr = ["", "red", "red", "red", "red", "red", "red", "red", "red"];
+
+        if (arr[0] === "X") {
+            redWon();
+        }
+        arr[0] = "X";
+
+        if (count % 2 == 0)
+        {
+            color = blue;
+            type = "O"
+        }   
+        else
+        {
+            color = red;
+            type = "X"
+        }
+
+        document.getElementById(id).style.backgroundColor = color;
+        document.getElementById(id).innerHTML = type;
+        count++;
+    }
+
+    function redWon(){
+        document.getElementById("red").innerHTML = "won!"
+        document.getElementById("blue").innerHTML = "lost :("
+    }
+
+    function blueWon(){
+        document.getElementById("blue").innerHTML = "won!"
+        document.getElementById("red").innerHTML = "lost :("
+    }
+    
+</script>
