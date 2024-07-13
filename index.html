@@ -22,23 +22,14 @@
             background-color: rgb(209, 209, 209);
         }
 
-        #resetLabel {
-            display: block;            
-            margin-top: 10vh;
-            /* position: absolute; */
-            z-index: 2;
-            margin-left: 46.6vw;
-        }
-
         #reset {
             /* display: none; */
-            /* margin-top: 1vh; */
-            width: 5.5vw;
-            height: 5.45vw;
-            background-color: rgb(35, 35, 35);
-            margin-left: 46.6vw;
+            margin-top: 4vh;
+            width: 6vw;
+            /* background-color: rgb(35, 35, 35); */
+            margin-left: 47vw;
             /* margin-top: 10vh; */
-            border-radius: 50%;
+            /* border-radius: 50%; */
         }
 
         #one {
@@ -95,8 +86,9 @@
             <button id="8" onclick="changeColor(8)"></button>
         </div>
     </div>
-    <label for="reset" id="resetLabel"><img src="redo.png" alt="reset board" width="110vw"></label>
-    <button id="reset" onclick="resetBoard()"></button>
+    <!-- <label for="reset" id="resetLabel"><img src="redo.png" alt="reset board" width="110vw"></label>
+    <button id="reset" onclick="resetBoard()"></button> -->
+    <img src="redo.png" alt="reset board" width="110vw" id="reset" onclick="resetBoard()">
 </body>
 </html>
 
