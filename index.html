@@ -3,40 +3,265 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Box Art</title>
+    <link rel="icon" type="image/x-icon" href="1946411.png"/>
+    <title>Tic Tac Toe</title>
     <style>
-        body {
-            background-color: rgb(255, 255, 255)
+        body{
+            background-color: rgb(35, 35, 35);
         }
-        #sidebar {
-            width: 6vw;
-            height: 100vh;
-            background-color: antiquewhite;
-            position: absolute;
+        #everything {
+            display: block;
             text-align: center;
-            top: 0;
-            left: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
+            margin-top: 20vh;
         }
 
-        .sideButton{
-            height: 5vh;
-            width: 5vh;
-            margin:auto;
+         button {
+            width: 10vw;
+            height: 10vw;
+            border-radius: 2vw;
+            background-color: rgb(209, 209, 209);
+        }
+
+        #one {
+            left: 0;
+            top: 0;
+            width: 20vw;
+            height: 100vh;
+            background-color: red;
+            position: absolute;
+            /* padding-top: 40vh; */
+            text-align: center;
+            font-size: 4vw;
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: white;
+        }
+        #two {
+            right: 0;
+            top: 0;
+            width: 20vw;
+            height: 100vh;
+            background-color: rgb(0, 247, 255);
+            position: absolute;
+            /* padding-top: 40vh; */
+            text-align: center;
+            font-size: 4vw;
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: white;
         }
     </style>
 </head>
 <body>
-    <div id="sidebar">
-        <button class="sideButton" id="red"></button>
-        <button class="sideButton" id="orange"></button>
-        <button class="sideButton" id="yellow"></button>
-        <button class="sideButton" id="green"></button>
-        <button class="sideButton" id="blue"></button>
-        <button class="sideButton" id="indigo"></button>
-        <button class="sideButton" id="violet"></button>
+    <div id="one">
+        <p id="player1">Player 1</p>
+        <p id="red"></p>
+    </div>
+    <div id="two">
+        <p id="player2">Player 2</p> 
+        <p id="blue"></p> 
+    </div>
+    <div id="everything">
+        <div>
+            <button id="0" onclick="changeColor(0); arr[0] = red"></button>
+            <button id="1" onclick="changeColor(1)"></button>
+            <button id="2" onclick="changeColor(2)"></button>
+        </div>
+        <div>
+            <button id="3" onclick="changeColor(3)"></button>
+            <button id="4" onclick="changeColor(4)"></button>
+            <button id="5" onclick="changeColor(5)"></button>
+        </div>
+        <div>
+            <button id="6" onclick="changeColor(6)"></button>
+            <button id="7" onclick="changeColor(7)"></button>
+            <button id="8" onclick="changeColor(8)"></button>
+        </div>
     </div>
 </body>
 </html>
+
+<script>
+
+    let red = "red";
+    let blue = "rgb(0, 247, 255)";
+    let color = red;
+    let type = "";
+    let count = 1;
+    let arr = ["", "", "", "", "", "", "", "", ""];
+
+
+    function changeColor(id){
+ 
+
+        if (count % 2 == 0)
+        {
+            color = blue;
+            type = "O"
+        }   
+        else
+        {
+            color = red;
+            type = "X"
+        }
+
+        document.getElementById(id).style.backgroundColor = color;
+        // document.getElementById(id).innerHTML = type;
+        count++;
+        arr[parseInt(id)] = color;
+
+        if (arr[0] == arr[1] && arr[1] == arr[2] && arr[0] != "")
+        {
+            if (arr[0] == red)
+            {
+                redWon();
+            }
+            else
+            {
+                blueWon();
+            }
+        }
+        else if (arr[3] == arr[4] && arr[4] == arr[5] && arr[3] != "")
+        {
+            if (arr[3] == red)
+            {
+                redWon();
+            }
+            else
+            {
+                blueWon();
+            }
+        }
+        else if (arr[6] == arr[7] && arr[7] == arr[8] && arr[6] != "")
+        {
+            if (arr[6] == red)
+            {
+                redWon();
+            }
+            else
+            {
+                blueWon();
+            }
+        }
+        else if (arr[0] == arr[3] && arr[3] == arr[6] && arr[0] != "")
+        {
+            if (arr[0] == red)
+            {
+                redWon();
+            }
+            else
+            {
+                blueWon();
+            }
+        }
+        else if (arr[1] == arr[4] && arr[4] == arr[7] && arr[1] != "")
+        {
+            if (arr[1] == red)
+            {
+                redWon();
+            }
+            else
+            {
+                blueWon();
+            }
+        }
+        else if (arr[2] == arr[5] && arr[5] == arr[8] && arr[2] != "")
+        {
+            if (arr[2] == red)
+            {
+                redWon();
+            }
+            else
+            {
+                blueWon();
+            }
+        }
+        else if (arr[0] == arr[4] && arr[4] == arr[8] && arr[0] != "")
+        {
+            if (arr[0] == red)
+            {
+                redWon();
+            }
+            else
+            {
+                blueWon();
+            }
+        }
+        else if (arr[2] == arr[4] && arr[4] == arr[6] && arr[2] != "")
+        {
+            if (arr[2] == red)
+            {
+                redWon();
+            }
+            else
+            {
+                blueWon();
+            }
+        }
+
+        if (arr[0] == arr[3] && arr[3] == arr[6] && arr[0] != "")
+        {
+            if (arr[0] == red)
+            {
+                redWon();
+            }
+            else
+            {
+                blueWon();
+            }
+        }
+        else if (arr[1] == arr[4] && arr[4] == arr[7] && arr[1] != "")
+        {
+            if (arr[1] == red)
+            {
+                redWon();
+            }
+            else
+            {
+                blueWon();
+            }
+        }
+        else if (arr[2] == arr[5] && arr[5] == arr[8] && arr[2] != "")
+        {
+            if (arr[2] == red)
+            {
+                redWon();
+            }
+            else
+            {
+                blueWon();
+            }
+        }
+        else if (arr[0] == arr[4] && arr[4] == arr[8] && arr[0] != "")
+        {
+            if (arr[0] == red)
+            {
+                redWon();
+            }
+            else
+            {
+                blueWon();
+            }
+        }
+        else if (arr[2] == arr[4] && arr[4] == arr[6] && arr[2] != "")
+        {
+            if (arr[2] == red)
+            {
+                redWon();
+            }
+            else
+            {
+                blueWon();
+            }
+        }
+    }
+
+    function redWon(){
+        document.getElementById("red").innerHTML = "won!"
+        document.getElementById("blue").innerHTML = "lost :("
+    }
+
+    function blueWon(){
+        document.getElementById("blue").innerHTML = "won!"
+        document.getElementById("red").innerHTML = "lost :("
+    }
+    
+</script>
